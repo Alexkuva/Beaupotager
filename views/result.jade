@@ -11,30 +11,25 @@ body
     #searchmap
     .searchResults
       .checkbox
-        label
-          input(type='checkbox' value='')
-          span.cr
-            img.icon(src='images/logos/banana.png' alt='Légume')
-        label
-          input(type='checkbox' value='')
-          span.cr
-            img.icon(src='images/logos/legume.png' alt='Légume')
-        label
-          input(type='checkbox' value='')
-          span.cr
-            i.fa.fa-leaf.label.label-success Bio
-        label
-          input(type='checkbox' value='')
-          span.cr
-            i.fa.fa-shopping-bag.label.label-primary Sur place
-        label
-          input(type='checkbox' value='')
-          span.cr
-            i.fa.fa-suitcase.label.label-danger Service
-        label
-          input(type='checkbox' value='')
-          span.cr
-            i.fa.fa-cart-arrow-down.label.label-default Vente flash
+        .btn-group(data-toggle='buttons')
+          label.btn.btn-default Fruits 
+            input(type='checkbox' autocomplete='off' checked='' name="fruit") 
+            i.fa.fa-check
+          label.btn.btn-default Légumes 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Bio 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Récolte sur place 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Formations 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Ventes flash 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
       .row
         .col-md-4.portfolio-item
           a(href='#')
@@ -84,7 +79,6 @@ body
           .plus
             .logo
               img.img-responsive2(src='images/Logos/Bio.png' alt='')
-      hr
 
       .row.text-center
         .col-lg-12
@@ -104,6 +98,9 @@ body
             li
               a(href='#') »
       hr
+      .footer
+        p Infos qu'il voudra, astuce Olivier. 
+        
 script(type="text/javascript" src='../javascripts/jquery-1.11.3.min.js')
 
 script(type="text/javascript" src='../javascripts/bootstrap.min.js')

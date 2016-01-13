@@ -38,9 +38,11 @@ opacity: 1;
 }
 
 .searchResults{
+background-color: white;
 float:right;
 width:58%;
 height:100%;
+overflow-y: scroll;
 }
 
 .portfolio-item {
@@ -79,20 +81,14 @@ color:#fff;
 }
 
 .checkbox{
-    margin-left: 24%;
+    margin-left: 25%;
 }
 
-/* Check button */
-.fa {
-    margin-right: 30px;
-}
 
 .logo{
     float: left;
 }
 
-.icon{
-    margin-right: 30px;
-}
+
 
 
