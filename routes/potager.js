@@ -26,6 +26,7 @@ router.get('/:id', function(req, res, next) {
   console.log('plop', req.params.id);
   console.log('params', req.params);
   res.render('potager', {
+    title: appName + " | Potager | Nom",
     potager: { id: req.params.id},
     user : req.user
   });

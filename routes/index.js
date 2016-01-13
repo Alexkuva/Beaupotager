@@ -6,19 +6,22 @@ var moment = require('moment');
 moment.locale('fr');
 var mongoose = require('mongoose');
 
+var headlineArray = ['Où trouver un potager près de chez vous ?','Où trouver un maraîcher bio près de chez vous ?','Où trouver des fruits et légumes bios près ce chez vous ?' ];
 
-router.get('/', function (req, res) {
-  var array = ['Où trouver un potager près de chez vous ?','Où trouver un maraîcher bio près de chez vous ?','Où trouver des fruits et légumes bios près ce chez vous ?' ]
+router.get('/', function (req, res)  { Accueil
   var randomNumber = Math.floor(Math.random() * 3);
-  res.render('index', { 
+  res.render('index', {
+    title: appName + " | Accueil",
     user : req.user,
-    title : array[randomNumber]
+    headline : headlineArray[randomNumber]
   });
 
 });
 
 router.get('/signup', function(req, res) {
-  res.render('signup', { });
+  res.render('signup', {
+    title: appName + " | Inscription"
+   });
 });
 
 
@@ -38,13 +41,13 @@ router.get('/db',function(req,res){
     auteur: String,
     nbVue : Number
   });
-  
-  
+
+
   var commentaireArticleSchema = new mongoose.Schema({
     pseudo :  String,
     contenu : String
   });
-  
+
   var articleSchema = mongoose.Schema({
     titre : String,
     type : String,
@@ -59,9 +62,9 @@ router.get('/db',function(req,res){
 });
 
 router.post('/signup', function(req, res) {
-  
+
     var date = moment().format("DD/MM/YYYY"); // Number
-     
+
     var userNewsletter = req.body.usernewsletter;
     var userInfoPartner = req.body.userinfopartner;
     // Test Newsletter et Infopartner
@@ -70,7 +73,7 @@ router.post('/signup', function(req, res) {
     if(userInfoPartner=="on"){userInfoPartner=1;}
     else{userInfoPartner=0;}
 
-    User.register(new User({ 
+    User.register(new User({
       username : req.body.username,
       prenom: req.body.userfirstname,
       nom: req.body.userfamilyname,
@@ -92,7 +95,10 @@ router.post('/signup', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
-    res.render('login', { user : req.user });
+    res.render('login', {
+      title: appName + " | Inscription",
+      user : req.user
+    });
 });
 
 router.get('/login_old', function(req, res) {
@@ -104,7 +110,9 @@ router.post('/login', function handleLocalAuthentication(req, res, next) {
     passport.authenticate('local', function(err, user, info) {
         if (err) return next(err);
         if (!user) {
-            return res.render("login",{info: info.message}) 
+            return res.render("login",{
+              title: appName + " | Inscription",
+              info: info.message})
         }
 
         // Manually establish the session...
@@ -128,7 +136,11 @@ router.get('/logout', function(req, res) {
 */
 router.get('/search', function(req, res, next) {
   var nbPotager = 7;
-  res.render('result', {nbPotager: nbPotager, user : req.user });
+  res.render('result', {
+    title: appName + " | Recherche",
+    nbPotager: nbPotager,
+    user : req.user
+  });
 });
 
 module.exports = router;
