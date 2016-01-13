@@ -1,16 +1,10 @@
-/*!
- * Start Bootstrap - 3 Col Portfolio HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
-body { 
+body {
   background-color: grey;
 }
 
-/* Element's position */ 
-.row { 
-  margin: 0; 
+/* Element's position */
+.row {
+  margin: 0;
   padding: 0;
 }
 
@@ -31,7 +25,7 @@ body {
     height:94.1%;
 }
 
-.searchBloc{
+.searchResults{
     background-color: white;
     float:right;
     width:57.9%;
@@ -43,15 +37,13 @@ body {
     margin-left: 24%;
 }
 
-/* Check button */ 
-
-.fa {         
-    margin-right: 30px;     
+/* Check button */
+.fa {
+    margin-right: 30px;
 }
-.btn.active i.fa {        
-  opacity: 1;       
+.btn.active i.fa {
+  opacity: 1;
 }
-
 
 .portfolio-item {
     border-width:2px;
@@ -59,7 +51,7 @@ body {
     margin-bottom: 32px;
 }
 
-/* Images  and logo  */ 
+/* Images  and logo  */
 .img-responsive{
     border: 2px solid black;
     -moz-border-radius:7px;
@@ -79,24 +71,15 @@ body {
     float: left;
 }
 
-
 .icon{
     margin-right: 30px;
 }
 
-/* Change pages */ 
+/* Change pages */
 .pagination li a {
-     color: #027000; 
+     color: #027000;
 }
-
 
 .pagination .active  a{
     background-color: #08000;
 }
-
-
-
-
-
-
-

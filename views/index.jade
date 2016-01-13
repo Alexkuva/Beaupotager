@@ -1,16 +1,14 @@
 include ./includes/head
 
-  title Beaupotager | Accueil
+  title #{title}
   link(href='../stylesheets/cover.css', rel='stylesheet')
   link(href='../stylesheets/index.css', rel='stylesheet')
-  link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css") 
+  link(href='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet')
   
-body()
+body
   #headerPosition(style='display:none;')
     include ./includes/header
-    
-
-  // Page  
+     
   section#top.header
     #headerHome
       .masthead.clearfix
@@ -38,14 +36,14 @@ body()
       h1= title
       
       br        
-      //Search
+      
       .container
         .row
           .col-sm-12
             form(action="/search")
               .searchbar
-                input.form-control(type="text" name="query" placeholder="Où trouver un potager?" )
-              button.btn.btn-success.btn-lg(type="submit" aria-hidden="true")    
+                input.form-control#search_autocomplete(type="text" name="placeQuery" placeholder="Où trouver un potager?" )
+              button.btn.btn-success.btn-lg(type="submit")    
                 i.fa.fa-search  Rechercher
             
         
@@ -131,7 +129,6 @@ body()
                   img.img-portfolio.img-responsive(src='' alt='image 4')
           a.btn.btn-dark(href='#') View More Items
 
-  // Call to Action
   aside.call-to-action.bg-primary
       .row
         .col-lg-12.text-center
@@ -139,39 +136,12 @@ body()
           a.btn.btn-lg.btn-light(href='#') Click Me!
           a.btn.btn-lg.btn-dark(href='#') Look at Me!
           
-  // Map
   section
-    .map#map(width='100%', height='100%', marginheight='0', marginwidth='0')
+    #homemap(style="height:450px;")
 
   include ./includes/footer
-  //Init Map
-  script(src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js" type="text/javascript")
-  script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js")
-  script.
-    var map = L.map('map',{
-      scrollWheelZoom: false,
-      doubleClickZoom: false,
-      touchZoom: false}
-      ).setView([46.7, 2], 6);
-
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> &copy; <a href=https://www.mapbox.com/about/maps/">Mapbox</a>',
-        maxZoom:25,
-        minZoom: 4,
-        id: 'antoinef.o168ol31',
-        accessToken: 'pk.eyJ1IjoiYW50b2luZWYiLCJhIjoiY2lnYXphdDZ5MDNkeHdnbTQ0bWRxamF2eiJ9.DppLsFptyQhsvPlXVOuShw'
-        
-    }).addTo(map);
-
-    L.control.scale({imperial: false}).addTo(map);
-    //L.control.layers(baseLayers, overlays).addTo(map);
-    var marker = L.marker(
-        [47,2],
-        {
-        riseOnHover: true
-        }
-    ).addTo(map);
-    marker.bindPopup("Coucou!");
+  
+  script(type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js")
   script.
     var didScroll;
     var lastScrollTop = 0;
@@ -189,4 +159,7 @@ body()
        lastScrollTop = st;
     });
 
-  
+  script(type="text/javascript" src='https://api.mapbox.com/mapbox.js/v2.2.3/mapbox.js')
+  script(type="text/javascript" src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyCd6Is_FM85A7GKzMElUgMdCUCC7v6dW-w")
+  script(type="text/javascript" src="javascripts/autocomplete.js" type="text/javascript")
+  script(type="text/javascript" src="javascripts/homemap.js" type="text/javascript")

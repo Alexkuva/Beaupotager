@@ -3,10 +3,10 @@ nav.navbar.navbar-default
     .navbar-header
       h3.headlogo
       a(href='/')
-        img(src='/images/logobeaupotagersmall.png' alt="Beaupotager")
+        img(src='../images/logobeaupotagersmall.png' alt="Beaupotager")
     form.navbar-form.navbar-left(action="/search" method="get" role='search')
       .form-group
-        input.form-control(type='text' name="query" placeholder='Où trouver un potager ?')
+        input.form-control#header_autocomplete(type='text' name="placeQuery" placeholder='Où trouver un potager ?')
       button.btn.btn-default(type='submit') Rechercher
     ul.nav.navbar-nav.navbar-right
       if (!user)
