@@ -26,42 +26,6 @@ router.get('/signup', function(req, res) {
 });
 
 
-router.get('/blog',function(req,res){
-  var blogSchema = new mongoose.Schema({
-    nom :  String,
-    url : String,
-    auteur: String,
-    nbVue : Number
-  });
-});
-
-router.get('/db',function(req,res){
-  var blogSchema = new mongoose.Schema({
-    nom :  String,
-    url : String,
-    auteur: String,
-    nbVue : Number
-  });
-
-
-  var commentaireArticleSchema = new mongoose.Schema({
-    pseudo :  String,
-    contenu : String
-  });
-
-  var articleSchema = mongoose.Schema({
-    titre : String,
-    type : String,
-    monArticle : [commentaireArticleSchema]
-  });
-  var articleM = mongoose.model('article', articleSchema);
-  var MyArticle = new articleM({ titre : 'Test2', type:'Article', commentaire:[] });
-  MyArticle.monArticle.push({ pseudo: 'My comment',contenu:'Salut petit commentaire' });
-  MyArticle.save(function (err) {
-      // do something
-    });
-});
-
 router.post('/signup', function(req, res) {
 
     var date = moment().format("DD/MM/YYYY"); // Number

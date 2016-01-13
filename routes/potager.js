@@ -21,7 +21,6 @@ router.param('id', function(req, res, next, id) {
 });
 
 
-
 router.get('/:id', function(req, res, next) {
   console.log('plop', req.params.id);
   console.log('params', req.params);
@@ -38,6 +37,18 @@ router.get('/:id', function(req, res, next) {
 //    return response.render('user', user);
 //  });
 //});
+
+
+router.get('/profile',function(req, res, next) {
+  if (req.isAuthenticated()){
+    res.render('profile',{ user : req.user });
+  }
+  else{
+        res.status(401).send("Unauthorized");
+    }
+});
+
+
 
 router.post('/create', function(req, res, next) {
   res.render('search');
