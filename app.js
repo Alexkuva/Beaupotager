@@ -15,6 +15,7 @@ var LocalStrategy = require('passport-local').Strategy;
 var routes = require('./routes/index');
 var potagers = require('./routes/potager');
 var users = require('./routes/users');
+var test = require('./routes/test');
 
 var app = express();
 
@@ -40,6 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/potager', potagers);
+app.use('/users',users);
+app.use('/test',test);
 
 // passport config
 var User = require('./models/utilisateur');
