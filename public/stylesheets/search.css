@@ -74,7 +74,6 @@ body {
 span.i.fa.fa{
   margin-left: 40px;
   font-size:20px;
-  color : green;
 }
 
 /* Pagination */
@@ -97,7 +96,17 @@ span.i.fa.fa{
   float: left;
 }
 
+.i.fa.fa-shopping-bag{
+  color: blue;
+}
 
+.i.fa.fa-cart-arrow-down{
+  color:gray;
+}
+
+.i.fa.fa-suitcase{
+  color:red;
+}
 
 
 
