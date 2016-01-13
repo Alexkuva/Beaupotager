@@ -68,7 +68,13 @@ body {
 }
 
 .logo {
-  float: left;
+  margin-left: 12.42%;
+}
+
+span.i.fa.fa{
+  margin-left: 40px;
+  font-size:20px;
+  color : green;
 }
 
 /* Pagination */
@@ -90,6 +96,7 @@ body {
 .logo{
   float: left;
 }
+
 
 
 
