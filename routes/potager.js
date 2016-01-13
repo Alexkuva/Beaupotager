@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var config = require('../config/config.js');
 /*
   Définition du parametre id pour les routes liées aux potagers
  */
@@ -26,7 +26,7 @@ router.get('/:id', function(req, res, next) {
   console.log('plop', req.params.id);
   console.log('params', req.params);
   res.render('potager', {
-    title: appName + " | Potager | Nom",
+    title: config.appName + " | Potager | Nom",
     potager: { id: req.params.id},
     user : req.user
   });

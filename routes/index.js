@@ -5,13 +5,14 @@ var router = express.Router();
 var moment = require('moment');
 moment.locale('fr');
 var mongoose = require('mongoose');
+var config = require('../config/config.js');
 
-var headlineArray = ['Où trouver un potager près de chez vous ?','Où trouver un maraîcher bio près de chez vous ?','Où trouver des fruits et légumes bios près ce chez vous ?' ];
+var headlineArray = ['Où trouver un potager près de chez vous ?','Où trouver un maraîcher bio près de chez vous ?','Où trouver des fruits et légumes bios près de chez vous ?' ];
 
-router.get('/', function (req, res)  { Accueil
+router.get('/', function (req, res)  { 
   var randomNumber = Math.floor(Math.random() * 3);
   res.render('index', {
-    title: appName + " | Accueil",
+    title: config.appName + " | Accueil",
     user : req.user,
     headline : headlineArray[randomNumber]
   });
@@ -20,7 +21,7 @@ router.get('/', function (req, res)  { Accueil
 
 router.get('/signup', function(req, res) {
   res.render('signup', {
-    title: appName + " | Inscription"
+    title: config.appName + " | Inscription"
    });
 });
 
@@ -96,7 +97,7 @@ router.post('/signup', function(req, res) {
 
 router.get('/login', function(req, res) {
     res.render('login', {
-      title: appName + " | Inscription",
+      title: config.appName + " | Inscription",
       user : req.user
     });
 });
@@ -111,7 +112,7 @@ router.post('/login', function handleLocalAuthentication(req, res, next) {
         if (err) return next(err);
         if (!user) {
             return res.render("login",{
-              title: appName + " | Inscription",
+              title: config.appName + " | Inscription",
               info: info.message})
         }
 
@@ -136,10 +137,16 @@ router.get('/logout', function(req, res) {
 */
 router.get('/search', function(req, res, next) {
   var nbPotager = 7;
+  if(req.query.placeQuery){
+    var placeQuery = req.query.placeQuery;
+  }else{
+    var placeQuery = '';
+  }
   res.render('result', {
-    title: appName + " | Recherche",
+    title: config.appName + " | Recherche",
     nbPotager: nbPotager,
-    user : req.user
+    user : req.user,
+    placeQuery : placeQuery
   });
 });
 
