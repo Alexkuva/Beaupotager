@@ -29,7 +29,7 @@ router.get('/blog',function(req,res){
     auteur: String,
     nbVue : Number
   });
-}
+});
 
 router.get('/db',function(req,res){
   var blogSchema = new mongoose.Schema({
