@@ -16,7 +16,7 @@ var potagerSchema = mongoose.Schema({
         numero : String,
         valide : String,
         images : [String],
-        produits : [Number],
+        produits : [{ type: mongoose.Schema.Types.Object, ref: 'Produit' }],
         descriptonProduit : [String],
         surplus  : [Number],
         service : {
