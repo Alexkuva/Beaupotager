@@ -1,123 +1,115 @@
 include ./includes/head
   title Search Page
-  link(href="../stylesheets/search.css", rel='stylesheet')
+  link(href='../stylesheets/Search.css', rel='stylesheet')
   link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css")
+  link(type="text/javascript" src="http://www.shieldui.com/shared/components/latest/js/shieldui-all.min.js")
+  link(href='https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet')
   script(src="../javascripts/map.js")
 
-body(onload="init();")
-  include ./includes/header
-
+  body(onload="init();")   
+    include ./includes/header    
+  // Page Content
   .container
     .map#map
     .searchBloc
-      .well.well-sm.text-center
-        .btn-group(data-toggle='buttons')
-          label.btn.btn-default Fruit 
-            input(type='checkbox' autocomplete='off' checked='' name="fruit") 
-            i.fa.fa-check
-          label.btn.btn-default Légumes 
-            input(type='checkbox', autocomplete='off')
-            i.fa.fa-check
-          label.btn.btn-default Bio 
-            input(type='checkbox', autocomplete='off')
-            i.fa.fa-check
-          label.btn.btn-default Récolte sur place 
-            input(type='checkbox', autocomplete='off')
-            i.fa.fa-check
-          label.btn.btn-default Formation 
-            input(type='checkbox', autocomplete='off')
-            i.fa.fa-check
-          label.btn.btn-default Ventes flash 
-            input(type='checkbox', autocomplete='off')
-            i.fa.fa-check
-        .row
-          //while p <= nbPotager
-          .col-md-4.portfolio-item
-            a(href='/potager/5')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-              .logo
-                img.img-responsive2(src='images/Logos/Bio.png', alt='')
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-              .logo
-                img.img-responsive2(src='images/Logos/Bio.png', alt='')
-        .row
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-              .logo
-                img.img-responsive2(src='images/Logos/Bio.png', alt='')              
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus 
-        // Projects Row
-        .row
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-              .logo
-                img.img-responsive2(src='images/Logos/Bio.png', alt='')
-          .col-md-4.portfolio-item
-            a(href='#')
-              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
-            .plus
-              .logo
-                img.img-responsive2(src='images/Logos/Bio.png', alt='')
-        hr
-        // Pagination
-        .row.text-center
-          .col-lg-12
-            ul.pagination
-              li.pageprecedente
-                a(href='#') «
-              li.page.active
-                a(href='#') 1
-              li.page
-                a(href='#') 2
-              li.page
-                a(href='#') 3
-              li.page
-                a(href='#') 4
-              li.page
-                a(href='#') 5
-              li.pagesuivante
-                a(href='#') »
-        // /.row
-        hr
-
-      section
-        include ./includes/footer
-  
-  script.
-    $('.page').click(function() {
-        $('.active').removeClass("active");
-        $(this).addClass("active");
-    });
-    $('.pageprecedente').click(function() {
-        $('.active').removeClass("active");
-        $().addClass("active");
-    });
-    $('.pagesuivante').click(function() {
-        $('.active').removeClass("active");
-        $().addClass("active");
-    });
-    
+      .checkbox
+        label
+          input(type='checkbox', value='')
+          span.cr
+            img.icon(src='images/logos/banana.png', alt='Légume')
+        label
+          input(type='checkbox', value='')
+          span.cr
+            img.icon(src='images/logos/legume.png', alt='Légume')
+        label
+          input(type='checkbox', value='')
+          span.cr
+            i.fa.fa-leaf.label.label-success Bio
+        label
+          input(type='checkbox', value='')
+          span.cr
+            i.fa.fa-shopping-bag.label.label-primary Sur place
+        label
+          input(type='checkbox', value='')
+          span.cr
+            i.fa.fa-suitcase.label.label-danger Service
+        label
+          input(type='checkbox', value='')
+          span.cr
+            i.fa.fa-cart-arrow-down.label.label-default Vente flash
+      .row
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+            .logo
+              img.img-responsive2(src='images/Logos/Bio.png', alt='')
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+            .logo
+              img.img-responsive2(src='images/Logos/Bio.png', alt='')
+      .row
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+            .logo
+              img.img-responsive2(src='images/Logos/Bio.png', alt='')              
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus 
+      // Projects Row
+      .row
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+            .logo
+              img.img-responsive2(src='images/Logos/Bio.png', alt='')
+        .col-md-4.portfolio-item
+          a(href='#')
+            img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+          .plus
+            .logo
+              img.img-responsive2(src='images/Logos/Bio.png', alt='')
+      hr
+      // Pagination
+      .row.text-center
+        .col-lg-12
+          ul.pagination
+            li
+              a(href='#') «
+            li.active
+              a(href='#') 1
+            li
+              a(href='#') 2
+            li
+              a(href='#') 3
+            li
+              a(href='#') 4
+            li
+              a(href='#') 5
+            li
+              a(href='#') »
+      hr
+  // jQuery
+  script(src='../javascripts/jquery.js')
+  // Bootstrap Core JavaScript
+  script(src='../javascripts/bootstrap.min.js')
   script(src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js" type="text/javascript")
+

@@ -1,60 +1,65 @@
 /*!
+ * Start Bootstrap - 3 Col Portfolio HTML Template (http://startbootstrap.com)
+ * Code licensed under the Apache License v2.0.
+ * For details, see http://www.apache.org/licenses/LICENSE-2.0.
+ */
 
-* Start Bootstrap - 3 Col Portfolio HTML Template (http://startbootstrap.com)
-
-* Code licensed under the Apache License v2.0.
-
-* For details, see http://www.apache.org/licenses/LICENSE-2.0.
-
-*/
-
-body {
+body { 
   background-color: grey;
 }
 
-.row {
-  margin: 0;
+/* Element's position */ 
+.row { 
+  margin: 0; 
   padding: 0;
 }
 
 .container {
   position:fixed;
-  padding:0;
-  margin:0;
-  left:0;
-  width: 100%;
-  height: 100%;
+    padding:0;
+    margin:0;
+    left:0;
+    width: 100%;
+    height: 100%;
 }
 
 .map{
+  position: fixed;
   bottom: 0;
   float: left;
-  width:42%;
-  height:100%;
-  border: solid 3px grey;
-}
-
-.btn i.fa {
-  opacity: 0;
-}
-
-.btn.active i.fa {
-  opacity: 1;
+    width:42%;
+    height:94.1%;
 }
 
 .searchBloc{
-  float:right;
-  width:57.9%;
-  height:100%;
-  overflow-y: scroll;
+    background-color: white;
+    float:right;
+    width:57.9%;
+    height:100%;
+    overflow-y: scroll;
 }
+
+.checkbox{
+    margin-left: 24%;
+}
+
+/* Check button */ 
+
+.fa {         
+    margin-right: 30px;     
+}
+.btn.active i.fa {        
+  opacity: 1;       
+}
+
 
 .portfolio-item {
-  border-width:2px;
-  margin-top: 42px;
-  margin-bottom: 32px;
+    border-width:2px;
+    margin-top: 42px;
+    margin-bottom: 32px;
 }
 
+/* Images  and logo  */ 
 .img-responsive{
     border: 2px solid black;
     -moz-border-radius:7px;
@@ -62,25 +67,36 @@ body {
     border-radius:7px 7px 0px 0px;
 }
 
-.plus {
+.plus{
     height: 50px;
     border: 2px solid black;
     background-color: white;
     border-radius:0px 0px 7px 7px;
+
 }
 
-.logo {
+.logo{
     float: left;
 }
 
-/* Pagination */
 
+.icon{
+    margin-right: 30px;
+}
+
+/* Change pages */ 
 .pagination li a {
-  color: #027000;
+     color: #027000; 
 }
 
-.pagination .active a, .pagination .active a:focus, .pagination .active a:hover {
-  background-color: #027000;
-  border-color: #027000;
-  color:#fff;
+
+.pagination .active  a{
+    background-color: #08000;
 }
+
+
+
+
+
+
+

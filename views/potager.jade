@@ -1,55 +1,117 @@
 include ./includes/head
-
-  title Beaupotager | Potager
-  link(href='../stylesheets/potager.css', rel='stylesheet')
-
-body
-  include ./includes/header
-.container
-  .row
-    br
-    #myCarousel.carousel.slide(data-ride='carousel')
-      // Indicators
-      ol.carousel-indicators
-        li.active(data-target='#myCarousel', data-slide-to='0')
-        li(data-target='#myCarousel', data-slide-to='1')
-        li(data-target='#myCarousel', data-slide-to='2')
-        li(data-target='#myCarousel', data-slide-to='3')
-      // Wrapper for slides
-      .carousel-inner(role='listbox')
-        .item.active
-          img(src='../images/Potager_ex.jpg', alt='', width='460', height='345')
-        .item
-          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
-        .item
-          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
-        .item
-          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
-          
-      // Left and right controls
-    .fleches(style="vertical-align:middle;")
-      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
-        i.fa.fa-2x.fa-chevron-left
-        span.sr-only Précédent
-      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
-        i.fa.fa-2x.fa-chevron-right
-        span.sr-only Suivant
-  .row
-    label.special
-      span.label.label-default Bio
-      span.label.label-primary Sur place
-      span.label.label-success Vente flash
-  .row
-    hr
-    .informations
-      ul
-        li Ville : Bordeaux 
-        li Departement : Aquitaine
-        li Description du potager : tres tres beaux avec de petites fleurs
-        li Site web : potager@esaip.org
-        li Email : tt@esaip.org
-        li Téléphone : 051293020
-        li Horaires visite : Lundi de 14h a 18h, Mardi de 10h a 12h et de 14h a 18h
-      h4= potager.id
-
-  include ./includes/footer
+    title Potager Profil
+    link(href='../stylesheets/potager.css', rel='stylesheet')
+    link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css")
+    script(src='http://code.jquery.com/jquery.min.js')
+    script(src='http://getbootstrap.com/2.3.2/assets/js/bootstrap.js')
+    script(src="../javascripts/map.js")
+    script(type='text/javascript').
+      $(document).ready(function(){
+        $("a[data-toggle='tab']").click(function(e){
+          $(".tab-content").css("border-color",$(this).css('backgroundColor'));
+        });
+      });
+  body(onload="init();") 
+    include ./includes/header
+    .container
+      .slideshow
+        #galerie
+          dl#photo
+            dt   
+            dd
+              img#big_pict(src='../images/fruits1.jpg', alt='Photo 1 en taille normale')
+          ul#galerie_mini
+            li
+              a(href='../images/fruits1.jpg', title='')
+                img.littleimg(src='../images/fruits1.jpg', alt='Image1')
+            li
+              a(href='../images/fruits2.jpg', title='')
+                img.littleimg(src='../images/fruits2.jpg', alt='Image2')
+            li
+              a(href='../images/fruits3.jpg', title='')
+                img.littleimg(src='../images/fruits3.jpg', alt='Image3')
+            li
+              a(href='../images/fruits4.jpg', title='')
+                img.littleimg(src='../images/fruits4.jpg', alt='Image4')
+            li
+              a(href='../images/fruits5.jpg', title='')
+                img.littleimg(src='../images/fruits5.jpg', alt='Image5')
+          script(type='text/javascript').
+            function displayPics()
+            {
+              var photos = document.getElementById('galerie_mini') ;
+              // On récupère l'élément ayant pour id galerie_mini
+              var liens = photos.getElementsByTagName('a') ;
+              // On récupère dans une variable tous les liens contenu dans galerie_mini
+              var big_photo = document.getElementById('big_pict') ;
+              // Ici c'est l'élément ayant pour id big_pict qui est récupéré, c'est notre photo en taille normale
+              var titre_photo = document.getElementById('photo').getElementsByTagName('dt')[0] ;
+              // Et enfin le titre de la photo de taille normale
+              // Une boucle parcourant l'ensemble des liens contenu dans galerie_mini
+              for (var i = 0 ; i < liens.length ; ++i) {
+                // Au clique sur ces liens 
+                liens[i].onclick = function() {
+                  big_photo.src = this.href; // On change l'attribut src de l'image en le remplaçant par la valeur du lien
+                  big_photo.alt = this.title; // On change son titre
+                  titre_photo.firstChild.nodeValue = this.title; // On change le texte de titre de la photo
+                  return false; // Et pour finir on inhibe l'action réelle du lien
+                };
+              }
+            }
+            // Il ne reste plus qu'à appeler notre fonction au chargement de la page
+            window.onload = displayPics;
+      .contentPotager
+        label.special
+          span.i.fa.fa-leaf.label.label-success Bio
+          span.i.fa.fa-shopping-bag.label.label-primary Sur place
+          span.i.fa.fa-cart-arrow-down.label.label-default Vente flash
+          span.i.fa.fa-suitcase.label.label-danger Service
+        p#adresse Adresse:  
+      .tabs
+        ul#myTab.nav.nav-tabs
+          li.active
+            a(data-toggle='tab', href='#sectionA', style='background-color:green')
+              | Fruits/Légumes
+          li
+            a(data-toggle='tab', href='#sectionB', style='background-color:green')
+              | Point de vente
+          li
+            a(data-toggle='tab', href='#sectionC', style='background-color:red')
+              | Service
+        #myTabContent.tab-content.box-shadow
+          #sectionA.tab-pane.fade.in.active
+            ul
+              li Ville : Bordeaux 
+              li Departement : Aquitaine
+              li Description du potager : tres tres beaux avec de petites fleurs
+              li Site web : potager@esaip.org
+              li Email : tt@esaip.org
+              li Téléphone : 051293020
+              li Horaires visite : Lundi de 14h a 18h, Mardi de 10h a 12h et de 14h a 18h
+            p
+              | C'est de superbe fruiiiiiits, comme la BANANE blablablablablablablablablablablablablabla blablablablablablablablablablablabla blablablablablablablablablablablabla blabla blabl
+          #sectionB.tab-pane.fade
+            ul
+              li Adresse : Bordeaux 
+              li Departement : Aquitaine
+              li Description du potager : tres tres beaux avec de petites fleurs
+              li Site web : potager@esaip.org
+              li Email : tt@esaip.org
+              li Téléphone : 051293020
+              li Horaires visite : Lundi de 14h a 18h, Mardi de 10h a 12h et de 14h a 18h
+          #sectionC.tab-pane.fade
+            .map#map
+        .mastfoot
+          .inner
+            p
+              | Suivez-nous sur 
+              a(href='https://www.facebook.com/beaupotager/?fref=ts', target='_blank') Facebook
+              |  et 
+              a(href='https://twitter.com/Beaupotager', target='_blank') Twitter
+              | .
+            p
+              | N'hésitez pas à nous contacter sur: 
+              span(style='color:Blue') beaupotager@gmail.com
+    // Bootstrap Core JavaScript
+    script(src='../javascripts/bootstrap.min.js')
+    script(src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js" type="text/javascript")

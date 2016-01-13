@@ -1,31 +1,105 @@
-.container{
-    background-color: #B0C0C0;
-    position:fixed;
+/* Element's position */
+.container {
+    position:relative;
     padding:0;
     margin:0;
     left:0;
     width: 100%;
     height: 100%;
 }
-.annonce{
-    border-width:2px;
-    margin-left: 20%;
-    margin-bottom: 10px;
-}
-.img_annonce{
-    width: 70%;
-    border: 2px solid black;
-}
-.special{
-    margin-left: 21%;
-    margin-bottom:10px;
-}
-.informations{
-    margin-left: 15%;
+
+.slideshow{
+    position: relative;
+    float: left;
 }
 
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-     width: 70%;
-     margin: auto;
- }
+.contentPotager{
+    position:relative;
+    float: left;
+    margin-top: 2px;
+    margin-left: 10px;
+}
+
+.tabs{
+    margin-top: 34%;
+}
+
+.fa{
+    margin-right: 10px;
+}
+
+/* slideshow */
+div#galerie
+{
+  background: white ;
+  padding: 15px ;
+  font: 0.9em Georgia, serif ;
+}
+
+ul#galerie_mini
+{
+  margin: 0 ;
+  padding: 0 ;
+  list-style-type: none ;
+}
+
+ul#galerie_mini li
+{
+  float: left ;
+}
+
+ul#galerie_mini li a img
+{
+  margin: 17px ;
+  border: 1px solid #dcb ;
+}
+
+dl#photo
+{
+  clear: both ;
+  margin: 0 auto ;
+}
+
+dl#photo dt
+{
+  font: italic 2.5em/1.5em Georgia, serif ;
+  color: black ;
+}
+
+dl#photo dd
+{
+  margin: 0 ;
+}
+
+dl#photo img
+{
+  border: 1px solid #dcb ;
+}
+
+#big_pict{
+  width: 680px;
+  height: 480px;
+}
+
+.littleimg{
+  margin-right: 30px;
+  width : 100px;
+  height: 100px;
+}
+
+/* Tabs */
+a{
+    color: black;
+}
+
+.map{
+  position: relative;
+  bottom: 0;
+  float: left;
+    width:42%;
+    height:92%;
+}
+
+
+
+
