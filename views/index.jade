@@ -1,0 +1,183 @@
+include ./includes/head
+
+  title Beaupotager | Accueil
+  link(href='../stylesheets/cover.css', rel='stylesheet')
+  link(href='../stylesheets/index.css', rel='stylesheet')
+  link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css") 
+  
+body()
+  #headerPosition(style='display:none;')
+    include ./includes/header
+    
+
+  // Page  
+  section#top.header
+    #headerHome
+      .masthead.clearfix
+            .inner
+              h3.masthead-brand
+                a(href='/')
+                  img(src='../images/logobeaupotager.png')
+              nav
+                ul.nav.masthead-nav
+                  // <li><a href="#"class="active">Inscription</a></li>
+                  li
+                    a(href='/signup') Inscription
+                  li
+                    a(href='/login') Connexion
+    .text-vertical-center
+      h1= title
+      
+      br        
+      //Search
+      .container
+        .row
+          .col-sm-12
+            form(action="/search")
+              .searchbar
+                input.form-control(type="text" name="query" placeholder="Où trouver un potager?" )
+              button.btn.btn-success.btn-lg(type="submit" aria-hidden="true")    
+                i.fa.fa-search  Rechercher
+            
+        
+  // About
+  section#about.about
+    .container
+      .row
+        .col-lg-12.text-center
+          h2 Trouvez simplement des fruits et légumes bios près de chez vous!
+          p.lead Cultivez, achetez et récoltez vos fruits et légumes
+
+  // Services
+  section#services.services.bg-primary
+    .container
+      .row.text-center
+        .col-lg-10.col-lg-offset-1
+          h2 Our Services
+          hr.small
+          .row
+            .col-md-3.col-sm-6
+              .service-item
+                span.fa-stack.fa-4x
+                  i.fa.fa-circle.fa-stack-2x
+                  i.fa.fa-cloud.fa-stack-1x.text-primary
+                h4
+                  strong Service Name
+                p
+                a.btn.btn-light(href='#') Learn More
+            .col-md-3.col-sm-6
+              .service-item
+                span.fa-stack.fa-4x
+                  i.fa.fa-circle.fa-stack-2x
+                  i.fa.fa-compass.fa-stack-1x.text-primary
+                h4
+                  strong Service Name
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                a.btn.btn-light(href='#') Learn More
+            .col-md-3.col-sm-6
+              .service-item
+                span.fa-stack.fa-4x
+                  i.fa.fa-circle.fa-stack-2x
+                  i.fa.fa-flask.fa-stack-1x.text-primary
+                h4
+                  strong Service Name
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                a.btn.btn-light(href='#') Learn More
+            .col-md-3.col-sm-6
+              .service-item
+                span.fa-stack.fa-4x
+                  i.fa.fa-circle.fa-stack-2x
+                  i.fa.fa-shield.fa-stack-1x.text-primary
+                h4
+                  strong Service Name
+                p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                a.btn.btn-light(href='#') Learn More
+
+  aside.callout
+    .text-vertical-center
+      h1 Vertically Centered Text
+  // Portfolio
+  section#portfolio.portfolio
+    .container
+      .row
+        .col-lg-10.col-lg-offset-1.text-center
+          h2 Our Work
+          hr.small
+          .row
+            .col-md-6
+              .portfolio-item
+                a(href='#')
+                  img.img-portfolio.img-responsive(src='' alt='image 1')
+            .col-md-6
+              .portfolio-item
+                a(href='#')
+                  img.img-portfolio.img-responsive(src='' alt='image 2')
+            .col-md-6
+              .portfolio-item
+                a(href='#')
+                  img.img-portfolio.img-responsive(src='' alt='image 3')
+            .col-md-6
+              .portfolio-item
+                a(href='#')
+                  img.img-portfolio.img-responsive(src='' alt='image 4')
+          a.btn.btn-dark(href='#') View More Items
+
+  // Call to Action
+  aside.call-to-action.bg-primary
+      .row
+        .col-lg-12.text-center
+          h3 The buttons below are impossible to resist.
+          a.btn.btn-lg.btn-light(href='#') Click Me!
+          a.btn.btn-lg.btn-dark(href='#') Look at Me!
+          
+  // Map
+  section
+    .map#map(width='100%', height='100%', marginheight='0', marginwidth='0')
+
+  include ./includes/footer
+  //Init Map
+  script(src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js" type="text/javascript")
+  script(src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js")
+  script.
+    var map = L.map('map',{
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      touchZoom: false}
+      ).setView([46.7, 2], 6);
+
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> &copy; <a href=https://www.mapbox.com/about/maps/">Mapbox</a>',
+        maxZoom:25,
+        minZoom: 4,
+        id: 'antoinef.o168ol31',
+        accessToken: 'pk.eyJ1IjoiYW50b2luZWYiLCJhIjoiY2lnYXphdDZ5MDNkeHdnbTQ0bWRxamF2eiJ9.DppLsFptyQhsvPlXVOuShw'
+        
+    }).addTo(map);
+
+    L.control.scale({imperial: false}).addTo(map);
+    //L.control.layers(baseLayers, overlays).addTo(map);
+    var marker = L.marker(
+        [47,2],
+        {
+        riseOnHover: true
+        }
+    ).addTo(map);
+    marker.bindPopup("Coucou!");
+  script.
+    var didScroll;
+    var lastScrollTop = 0;
+    $(window).scroll(function(event){
+      var st = $(this).scrollTop();
+       if (st > lastScrollTop){
+           $('#headerPosition').show( "slide", {direction: "up" } );
+           $('#headerHome').hide();
+       } else {
+          if(st <100 ){
+            $('#headerPosition').hide( "slide", { direction: "up"  } );
+            $('#headerHome').show();
+          }
+       }
+       lastScrollTop = st;
+    });
+
+  

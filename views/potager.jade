@@ -1,0 +1,55 @@
+include ./includes/head
+
+  title Beaupotager | Potager
+  link(href='../stylesheets/potager.css', rel='stylesheet')
+
+body
+  include ./includes/header
+.container
+  .row
+    br
+    #myCarousel.carousel.slide(data-ride='carousel')
+      // Indicators
+      ol.carousel-indicators
+        li.active(data-target='#myCarousel', data-slide-to='0')
+        li(data-target='#myCarousel', data-slide-to='1')
+        li(data-target='#myCarousel', data-slide-to='2')
+        li(data-target='#myCarousel', data-slide-to='3')
+      // Wrapper for slides
+      .carousel-inner(role='listbox')
+        .item.active
+          img(src='../images/Potager_ex.jpg', alt='', width='460', height='345')
+        .item
+          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
+        .item
+          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
+        .item
+          img(src='../images/Potager_ex.jpg', alt='NULL', width='460', height='345')
+          
+      // Left and right controls
+    .fleches(style="vertical-align:middle;")
+      a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+        i.fa.fa-2x.fa-chevron-left
+        span.sr-only Précédent
+      a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+        i.fa.fa-2x.fa-chevron-right
+        span.sr-only Suivant
+  .row
+    label.special
+      span.label.label-default Bio
+      span.label.label-primary Sur place
+      span.label.label-success Vente flash
+  .row
+    hr
+    .informations
+      ul
+        li Ville : Bordeaux 
+        li Departement : Aquitaine
+        li Description du potager : tres tres beaux avec de petites fleurs
+        li Site web : potager@esaip.org
+        li Email : tt@esaip.org
+        li Téléphone : 051293020
+        li Horaires visite : Lundi de 14h a 18h, Mardi de 10h a 12h et de 14h a 18h
+      h4= potager.id
+
+  include ./includes/footer

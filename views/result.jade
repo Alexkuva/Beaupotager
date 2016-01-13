@@ -1,0 +1,123 @@
+include ./includes/head
+  title Search Page
+  link(href="../stylesheets/search.css", rel='stylesheet')
+  link(rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css")
+  script(src="../javascripts/map.js")
+
+body(onload="init();")
+  include ./includes/header
+
+  .container
+    .map#map
+    .searchBloc
+      .well.well-sm.text-center
+        .btn-group(data-toggle='buttons')
+          label.btn.btn-default Fruit 
+            input(type='checkbox' autocomplete='off' checked='' name="fruit") 
+            i.fa.fa-check
+          label.btn.btn-default Légumes 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Bio 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Récolte sur place 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Formation 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+          label.btn.btn-default Ventes flash 
+            input(type='checkbox', autocomplete='off')
+            i.fa.fa-check
+        .row
+          //while p <= nbPotager
+          .col-md-4.portfolio-item
+            a(href='/potager/5')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+              .logo
+                img.img-responsive2(src='images/Logos/Bio.png', alt='')
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+              .logo
+                img.img-responsive2(src='images/Logos/Bio.png', alt='')
+        .row
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+              .logo
+                img.img-responsive2(src='images/Logos/Bio.png', alt='')              
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus 
+        // Projects Row
+        .row
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+              .logo
+                img.img-responsive2(src='images/Logos/Bio.png', alt='')
+          .col-md-4.portfolio-item
+            a(href='#')
+              img.img-responsive(src='images/FruitsLegumes/Tests/cibouletteplein.jpg', alt='')
+            .plus
+              .logo
+                img.img-responsive2(src='images/Logos/Bio.png', alt='')
+        hr
+        // Pagination
+        .row.text-center
+          .col-lg-12
+            ul.pagination
+              li.pageprecedente
+                a(href='#') «
+              li.page.active
+                a(href='#') 1
+              li.page
+                a(href='#') 2
+              li.page
+                a(href='#') 3
+              li.page
+                a(href='#') 4
+              li.page
+                a(href='#') 5
+              li.pagesuivante
+                a(href='#') »
+        // /.row
+        hr
+
+      section
+        include ./includes/footer
+  
+  script.
+    $('.page').click(function() {
+        $('.active').removeClass("active");
+        $(this).addClass("active");
+    });
+    $('.pageprecedente').click(function() {
+        $('.active').removeClass("active");
+        $().addClass("active");
+    });
+    $('.pagesuivante').click(function() {
+        $('.active').removeClass("active");
+        $().addClass("active");
+    });
+    
+  script(src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js" type="text/javascript")

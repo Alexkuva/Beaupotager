@@ -1,0 +1,59 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Beaupotager
+    // Bootstrap core CSS
+    link(href='../stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for form template
+    link(href='../stylesheets/signin.css', rel='stylesheet')
+    // Custom styles for template style
+    link(href='../stylesheets/cover.css', rel='stylesheet')
+    style.
+      html,body {
+        height: 100%;
+        background-image: url("../images/background_3.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      body {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 3px rgba(0,0,0,.5);
+      }
+
+block content        
+  .site-wrapper
+      .site-wrapper-inner
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand
+              a(href='/')
+                img(src='../images/logobeaupotager.png')
+            nav
+              ul.nav.masthead-nav
+                // <li><a href="#"class="active">Inscription</a></li>
+                li
+                  a(href='/signup') Inscription
+                li
+                  a(href='/login') Connexion
+        .cover-container
+          .inner.cover
+            .lead
+              form.form-signin(role='form', action="/login",method="post", style='max-width: 300px;')
+                h2.form-signin-heading Login Page
+                label.sr-only(for='inputUsername') Nom
+                input#inputUsername.form-control(type='text', placeholder='Enter Username', name='username', required='', autofocus='')
+                label.sr-only(for='inputPassword') Nom
+                input#inputPassword.form-control(type='password', placeholder='Password', name='password', required='', autofocus='')
+                br
+                h4= info
+                button.btn.btn-login.btn-login-left(type='submit') Submit
+                a(href='/')
+                  button.btn.btn-login.btn-login-right(type="button") Cancel

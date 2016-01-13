@@ -1,0 +1,70 @@
+doctype html
+html(lang='fr')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Beaupotager
+    // Bootstrap core CSS
+    link(href='../stylesheets/bootstrap.min.css', rel='stylesheet')
+    // Custom styles for form template
+    link(href='../stylesheets/signin.css', rel='stylesheet')
+    // Custom styles for template style
+    link(href='../stylesheets/cover.css', rel='stylesheet')
+    style.
+      html,body {
+        height: 100%;
+        background-image: url("../images/background_2.jpg");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+      }
+      body {
+        color: #fff;
+        text-align: center;
+        text-shadow: 0 1px 3px rgba(0,0,0,.5);
+      }
+  body
+    .site-wrapper
+      .site-wrapper-inner
+        .masthead.clearfix
+          .inner
+            h3.masthead-brand
+              a(href='/')
+                img(src='../images/logobeaupotager.png')
+            nav
+              ul.nav.masthead-nav
+                // <li><a href="#"class="active">Inscription</a></li>
+                li
+                  a(href='/signup') Inscription
+                li
+                  a(href='/login') Connexion
+        .cover-container
+          .inner.cover
+            .lead
+              form.form-signin(action='/signup', method='post')
+                h2.form-signin-heading Inscription
+                label.sr-only(for='inputFirstName') Nom
+                input#inputFirstName.form-control(type='text', placeholder='Prénom', name='userfirstname', required='', autofocus='')
+                label.sr-only(for='inputFamilyName') Prénom
+                input#inputFamilyName.form-control(type='text', placeholder='Nom', name='userfamilyname', required='', autofocus='')
+                label.sr-only(for='inputLogin') Login
+                input#inputLogin.form-control(type='text', placeholder='Login', name='username', required='', autofocus='')
+                label.sr-only(for='inputPassword') Password
+                input#inputPassword.form-control(type='password', placeholder='Mot de passe', name='password', required='', autofocus='')
+                label.sr-only(for='inputEmail') Adresse Email
+                input#inputEmail.form-control(type='email', placeholder='Adresse Email', name='useremail', required='', autofocus='')
+                label.sr-only(for='inputPhone') Téléphone
+                input#inputPhone.form-control(type='tel', placeholder='Téléphone', name='phone', required='', autofocus='')
+                span.checkbox
+                  label.sr-only(for='inputNews') Newsletter
+                  input#inputNews(type='checkbox', name='usernewsletter', checked)
+                  |Recevoir la Newsletter
+                span.checkbox
+                  label.sr-only(for='inputPartners') Partners
+                  input#inputPartners(type='checkbox', name='userinfopartner', checked)
+                  |Recevoir les informations de nos partenaires
+                button.btn.btn-lg.btn-primary.btn-block(style='background-color:#72a14b;', type='submit') Envoyer

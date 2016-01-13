@@ -1,0 +1,1187 @@
+@charset "utf-8"; 
+
+/* ----------------------------------------------
+	Main CSS Document - CMS Template Buddy
+	Template No.: 001
+	Version: 1.01
+	
+	www.cmstemplatebuddy.com
+
+	Please read README_FIRST.txt
+------------------------------------------------- */
+ 
+
+/* Reset 
+------------------------------------------------- */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the
+➝ markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Accessibility 
+------------------------------------------------- */
+span.accesskey {
+	text-decoration: none;
+}
+.accessibility, hr {
+	position: absolute;
+	top: -999em;
+	left: -999em;
+}
+dfn {
+	position: absolute;
+	left: -1000px;
+	top: -1000px;
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	display: inline;
+}
+
+/* Common / Typography
+------------------------------------------------- */
+html {
+	font-size:100.01%;
+}
+body {
+	color:#626466;
+	background:#fff;
+	font: 75%/165% Arial, Helvetica, sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-weight:normal;
+	color:#316996;
+	padding: 10px 5px 7px 0;
+}
+h1 {
+	font-size:3em;
+	line-height:1.2;
+}
+h2 {
+	font-size:2.5em;
+	margin-bottom:0.2em;
+	line-height:1.1;
+}
+h3 {
+	font-size:1.9em;
+	line-height:1.2;
+}
+h4 {
+	font-size:1.5em;
+	line-height:1.25;
+	color:#444;
+}
+h5 {
+	font-size:1em;
+	font-weight:bold;
+	line-height:1.15;
+	color:#444;
+}
+h6 {
+	font-size:1em;
+	font-weight:bold;
+	color:#444;
+}
+h1 img, h2 img, h3 img, h4 img, h5 img, h6 img {
+	margin:0;
+}
+p	{
+	margin:0 0 1.2em;
+}
+p + p	{
+    margin-top: -.8em;
+    text-indent: 2em;
+}
+#content img	{
+	border:1px solid #d2eaf7;
+	padding:6px;
+	background:#f5f7fa;
+	margin:6px 12px;
+}
+#content .gallery img	{
+	border:none;
+	padding:0;
+	margin:0;
+}
+a	{
+	color:#74a24b;
+	text-decoration:none;
+}
+a:focus, a:hover {
+	color:#39b9f4;
+	border-bottom:1px dotted #09f;
+}
+.float-left {
+	float: left !important;
+}
+.float-right {
+	float: right !important;
+}
+.align-left {
+	text-align: left;
+}
+.align-right {
+	text-align: right;
+}
+.no-border {
+	border: medium none;
+}
+.clearer {
+	clear: both;
+}
+.clearfix {
+	display: inline-block;
+}
+.clearfix:after {
+	clear: both;
+	content: ".";
+	display: block;
+	height: 0;
+	visibility: hidden;
+}
+.hide-text	{
+	text-indent: -9999px;
+}
+.hide	{
+	position:absolute;
+	left: -9999px;
+}
+hr		{
+	background:#ddd;
+	color:#ddd;
+	clear:both;
+	float:none;
+	width:100%;
+	height:1px;
+	margin:0 0 17px;
+	border:none;
+}
+pre {
+    background-color: #f4f4f4;
+    border: 1px solid #dedede;
+    font-size: 90%;
+    line-height: 1.5em;
+    margin: 0 1em 1em;
+    padding: 0.5em;
+}
+code, pre {
+        font-family: "Courier New",Courier,monospace;
+        font-size: 1em;
+        line-height:1.5;
+        color:#222;
+}
+blockquote {
+	margin:1.5em;
+	color:#666;
+	font-style:italic;
+}
+
+/* Layout 
+------------------------------------------------- */
+#headerWrapper {
+	background: #FFFFFF;
+
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+#contentWrapper {
+	background: #FFFFFF;
+	margin: 0;
+	padding: 10px 0 0;
+	width: 100%;
+
+}
+#footerWrapper {
+	clear: both;
+	width: 100%;
+}
+#header {
+	height:120px;
+	position:relative;
+color:#74a24b;
+}
+#sliderWrapper	{
+	margin: 0 auto;
+	width: 950px;
+
+}
+#content {
+	overflow:hidden;
+	padding:0;
+	border-bottom: 1px solid #ddd;
+}
+#footer {
+	position: relative;
+	padding: 12px 0;
+	margin-bottom: 20px;
+	font-size: 90%;
+	color:#74a24b;
+}
+#main {
+
+	/*width: 575px;*/
+	margin: 0;
+	padding: 20px 25px 10px 15px;
+}
+#sidebar {
+	width: 310px;
+	margin: 0;
+	margin-bottom: -30000px;
+	padding: 0px 0 30010px 24px;
+
+}
+.sidecontent	{
+	border-top: 1px solid #ddd;
+	padding-top: 14px;
+
+}
+.col-border {
+	border-left: 1px solid #eee;
+}
+.border	{
+	border-top: 1px solid #ddd;
+
+}
+.span-950 {
+	margin: 0 auto;
+	width: 950px;
+}
+.twoColumns	{
+	width: 575px;
+
+}
+
+
+/* Slider 
+------------------------------------------------- */
+.bannerHolder {
+	position:relative;
+	z-index:3;
+	margin:0 -43px; 
+	padding:0 43px;
+}
+#bannerNav {
+	width:950px;
+	height:20px;
+	overflow:hidden;
+	margin:0px;
+	padding:2px 0 6px 0;
+	text-align:center;
+	list-style:none;
+}
+#bannerNav li	{
+	display:inline-block;
+	padding:0 2px;
+}
+#bannerNav li a {
+	display:inline-block;
+	width:20px;
+	height:11px;
+	text-indent:-9999px;
+	background:url(/uploads/tpl-buddy-001/btn-banner-nav.png) left top no-repeat;
+	outline:none;
+	border:none;
+}
+#bannerNav li.activeSlide a {
+	background-position:0 -11px;
+}
+#prevBanner {
+	position:absolute;
+	left:0px;
+	top:50%;
+	display:block;
+	width:43px;
+	height:79px;
+	margin-top:-39px;
+	text-indent:-9999px;
+	background:url(/uploads/tpl-buddy-001/btn-prev-banner.png) left top no-repeat;
+	outline:none;
+}
+#prevBanner:hover {
+	background-position:0 -79px;
+}
+#nextBanner {
+	position:absolute;
+	right:0px;
+	top:50%;
+	display:block;
+	width:43px;
+	height:79px;
+	margin-top:-39px;
+	text-indent:-9999px;
+	background:url(/uploads/tpl-buddy-001/btn-next-banner.png) left top no-repeat;
+	outline:none;
+}
+#nextBanner:hover {
+	background-position:0 -79px;
+}
+.banner	{
+
+background: #73a24d;
+background:url(/uploads/tpl-buddy-001/bandeau.jpg) left top no-repeat;
+	
+	border: 1px solid #d2eaf7;
+	width:950px;
+	height:300px;
+	overflow:hidden;
+}
+.banner div {
+	overflow:hidden;
+	position:relative;
+	width:928px;
+	height:250px;
+	padding:30px 10px 20px 10px;
+}
+.banner div img {
+	position:absolute;
+	left:15px;
+	top:15px;
+	z-index:2;
+	background:none;
+	border:none;
+	border-right:1px solid #d2eaf7;
+	padding:0 25px 0 0;
+	margin:0;
+}
+.banner div h2 {
+
+	position:relative;
+	z-index:3;
+	margin:0 0 10px 630px;
+	color:red;
+	font-weight:normal;
+	padding:0;
+	line-height:1em;
+}
+.banner div p {
+color: #d2fab1;
+font-weight: bold;
+	position:relative;
+	z-index:3;
+	font-size:18px;
+	margin:0 0 10px 630px;
+}
+a.readmore-slider 	{
+	position:absolute;
+	left:640px;
+	top:254px;
+	font-size:14px;
+	padding: 4px 12px;
+	z-index:100;
+	background-color:#557739;
+	color: #fff;
+	display:block;
+	text-decoration:none;
+	border:2px solid white;
+}
+a:hover.readmore-slider 	{
+	background-color:#085d8e;
+}
+
+
+/* Header & Footer
+------------------------------------------------- */
+#logo a	{
+	min-height: 70px;
+	min-width: 270px;
+	display:block;
+	float:left;
+	margin:20px 0 0;
+	border:none;
+}
+#logo h1	{
+	margin:0;
+	padding:0;
+}
+.footer-icons	{
+	float:right;
+	height:20px;
+	margin: 6px 2px 6px 4px;
+}
+#footer p	{
+	line-height:1.1;
+	margin:0 12px;
+}
+.footer-icons a	{
+	border:none;
+}
+.validation {
+	margin: 0;
+	width: 140px;
+	height:25px;
+	float: right;
+}
+a.valid-css 	{
+	width:70px;
+	display:block;
+	float: right;
+	height:25px;
+	background-image:url(/uploads/tpl-buddy-001/valid-css.png);
+	background-position: 69px 0;
+	text-indent:-9999px;
+}
+a:hover.valid-css 	{
+	background-position: 0 0;
+}
+a.valid-xhtml 	{
+	width:70px;
+	display:block;
+	float: right;
+	height:25px;
+	background-image:url(/uploads/tpl-buddy-001/valid-xhtml.png);
+	background-position: 69px 0;
+	text-indent:-9999px;
+}
+a:hover.valid-xhtml 	{
+	background-position: 0 0;
+}
+.breadcrumbs	{
+	/*border-bottom:1px dotted #ddd;*/
+	margin-bottom:2px;
+	padding: 0 10px;
+	font-size:0.875em;
+	color:#888;
+	background:#f2f2f2;
+}
+a.to-top     {
+        background:url(/uploads/tpl-buddy-001/submit.png) no-repeat 0 center;
+        padding-left: 14px;
+        margin-bottom: 10px;
+}
+a:hover.to-top ,
+a:focus.to-top   {
+        border:none;
+}
+
+/* Search 
+------------------------------------------------- */
+#search{
+	text-align:right;
+	border:1px solid #dadbdd;
+	background:#d2fab1;
+	padding:0;
+	margin: 20px 0 16px 0;
+}
+#search input {
+	background:none;
+	width:256px;
+	height:35px;
+	vertical-align:middle;
+	margin:0 5px 0 0;
+	padding:2px 0 0 0;
+	border:0;
+	color:#87888A;
+}
+#search input.searchBtn {
+	border:0;
+	background:url(/uploads/tpl-buddy-001/search.png) no-repeat 0 0;
+	width:28px;
+	height:28px;
+	margin:0 4px 0 3px;
+}
+#search input.searchBtn:hover {
+	border:0;
+	background:url(/uploads/tpl-buddy-001/search.png) no-repeat -28px 0;
+	width:28px;
+	height:28px;
+	margin:0 4px 0 3px;
+}
+
+/* News 
+------------------------------------------------- */
+#news	{
+	margin-bottom: 6px;
+	padding: 12px 0px 6px 2px;
+background: #d2fab1;
+}
+#news h2	{
+	padding: 0px 5px 10px 22px;
+	background: url(/uploads/tpl-buddy-001/news-title-icon.png) no-repeat 0 1px;
+	border-bottom: 1px solid #ddd;
+	font-size: 2em;
+    line-height: 1;
+    margin-bottom: 0.6em;
+}
+.NewsSummary	{
+	margin: 10px 0 0;
+	padding-bottom: 10px;
+}
+.NewsSummaryRow	{
+	display: block;
+	overflow:hidden;
+	color: #8e9092;
+	border-top: 1px dotted #ddd;
+	margin-top: 4px;
+	font-size:90%;
+}
+.NewsSummaryRowSeparator	{
+	padding-top: 1px;
+}
+.NewsSummaryLink a	{
+	font-size: 1.4em;
+	border:none;
+}
+.NewsSummarySummary	{
+	margin-top: 4px;
+	margin-bottom: 10px;
+}
+.NewsSummarySummary	p {
+	margin: 0;
+}
+.NewsSummaryPostdate	{
+	float:left;
+	margin: 2px 6px 2px 0;
+	font-style:italic;
+}
+.NewsSummaryCategory	{
+	float:left;
+	margin: 2px 4px;
+}
+.NewsSummaryAuthor	{
+	float:left;
+	margin: 2px 4px;
+}
+.NewsSummaryAuthor span {
+	color:#d39712;
+}
+.NewsSummaryMorelink {
+	line-height:normal !important;
+}
+.NewsSummaryMorelink a	{
+	padding: 5px 8px 4px 20px;
+	margin-top: 4px;
+	margin-bottom:12px;
+	float: left;
+	border:1px solid #dadbdd;
+	background-color: #fafafa;
+	background-image: url(/uploads/tpl-buddy-001/read-more-icon.png);
+	background-repeat:no-repeat;
+	background-position: 6px 7px;
+}
+.NewsSummaryMorelink a:hover	{
+	background-position: 6px -34px;
+}
+.NewsDetailRow	{
+	display: block;
+	overflow:hidden;
+	color: #8e9092;
+	margin-top: 4px;
+	padding: 4px 10px;
+	background: #f8f8f8;
+	border: 1px solid #e5e5e5;
+}
+.NewsDetailRowSeparator	{
+	padding:0;
+	margin: 0 4px;
+}
+#NewsPostDetailDate {
+	float:left;
+	font-size: 90%;
+	margin: 0;
+	font-weight: bold;
+}
+#NewsPostDetailSummary {
+	line-height: 150%;
+	margin: 10px 0;
+	padding: 10px 0;
+	color: #000;
+	border-bottom: 1px dotted #ddd;
+}
+#NewsPostDetailSummary p {
+	margin: 0;
+}
+#NewsPostDetailCategory {
+	float:left;
+	margin: 0;
+	padding: 0;
+}
+#NewsPostDetailContent {
+	margin: 15px 0;
+	line-height: 150%;
+}
+#NewsPostDetailAuthor {
+	float:left;
+}
+#NewsPostDetailAuthor span {
+	color:#d39712;
+}
+#NewsPostDetailTitle {
+	margin: 0 0 4px 0;
+}
+#NewsPostDetailHorizRule {
+	margin: 0;
+}
+#NewsPostDetailPrintLink {
+}
+#NewsPostDetailReturnLink {
+	line-height:normal !important;
+}
+#NewsPostDetailReturnLink a {
+	padding: 5px 8px 4px 20px;
+	margin-top: 4px;
+	margin-bottom:12px;
+	float: left;
+	border:1px solid #dadbdd;
+	background-color: #fafafa;
+	background-image: url(/uploads/tpl-buddy-001/return.png);
+	background-repeat:no-repeat;
+	background-position: 6px 8px;
+}
+#NewsPostDetailReturnLink a:hover {
+	background-position: 6px -33px;
+}
+#news ul li {
+	padding: 2px 2px 2px 5px;
+	margin-left: 20px;
+}
+.news-pagination {
+        margin: 8px 0;
+        overflow:hidden;
+}
+.firstpage a {
+        float:left;
+        display:block;
+        padding: 0;
+        margin: 2px;
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        background: #fafafa url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -21px 0;
+        text-indent: -9999px;
+}
+.firstpage a:hover {
+        background: #f0f0f0 url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -21px 0;
+}
+.prevpage a {
+        float:left;
+        display:block;
+        padding: 0;
+        margin: 2px;
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        background: #fafafa url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -1px 0;
+        text-indent: -9999px;
+}
+.prevpage a:hover {
+        background: #f0f0f0 url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -1px 0;
+}
+.nextpage a {
+        float:left;
+        display:block;
+        padding: 0;
+        margin: 2px;
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        background: #fafafa url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -41px 0;
+        text-indent: -9999px;
+}
+.nextpage a:hover {
+        background: #f0f0f0 url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -41px 0;
+}
+.lastpage a {
+        float:left;
+        display:block;
+        padding: 0;
+        margin: 2px;
+        border: 1px solid #ccc;
+        width: 20px;
+        height: 20px;
+        background: #fafafa url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -61px 0;
+        text-indent: -9999px;
+}
+.lastpage a:hover {
+        background: #f0f0f0 url(/uploads/tpl-buddy-001/news-pagination.png) no-repeat -61px 0;
+}
+.pagetext {
+        float:left;
+        display:block;
+        padding: 0 4px;
+        margin: 2px 2px 2px 0px;
+        border: 1px solid #ccc;
+        height: 20px;
+        background: #fafafa;
+        color: #888;
+}
+
+
+
+/* Forms 
+------------------------------------------------- */
+.formbuddy	{
+	padding:10px 2px;
+}
+.formbuddy div {
+	margin:12px 0;
+}
+.formbuddy legend	{
+	color:#586B7A;
+	padding: 4px 0;
+}
+.formbuddy .submit input	{
+	background: #eee url(/uploads/tpl-buddy-001/submit.png) no-repeat 4px 5px;
+	border:1px solid #aaa;
+	color:#0888C3;
+	padding: 2px 4px 2px 16px;
+	margin:4px 0 0;
+}
+.formbuddy .submit input:hover	{
+	background: #fefefe url(/uploads/tpl-buddy-001/submit.png) no-repeat 4px 5px;
+	border:1px solid #a4a4a4;
+}
+.formbuddy input[type="text"], .formbuddy input[type="password"], .formbuddy textarea {
+        background-color: #f2f2f2;
+        border: 1px solid #c0c0c0;
+        box-shadow: inset 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 12px;
+        margin: 0 10px 0 0;
+        padding: 6px 3px;
+        min-width: 200px;
+	color: #777;
+}
+.formbuddy input:hover, .formbuddy input:focus, .formbuddy textarea:hover, .formbuddy select:hover, .formbuddy checkbox:hover {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #A4A4A4;
+}
+.formbuddy textarea {
+	overflow:auto;
+}
+.error_message	{
+	color:red;
+}
+
+
+/* Lists and Tables
+------------------------------------------------- */
+ul, ol {
+	margin:0 1.5em 1.5em 0;
+	padding-left:1.5em;
+}
+ul 	{
+	list-style-type:disc;
+}
+ul li	{
+	padding: 0.1em 0;
+}
+ol {	
+	list-style-type:decimal;
+}
+ul ul,
+ol ol {
+	margin: 0.3em 1.5em 0.2em 0;
+}
+ul ul	{
+	list-style-type:circle;
+}
+ul ul ul,
+ol ol ol	{
+	margin: 0.3em 1.5em 0.2em 0;
+}
+ul ul ul	{
+	list-style-type: square;
+}
+dl {
+	margin:0 0 1.5em 0;
+}
+dl dt {
+	font-weight:bold;
+}
+dl dd {
+	margin-left:1.5em;
+	margin-bottom: 0.4em;
+}
+table {
+	margin:1.2em 0;
+	width:100%;
+        border-color: #cbd4d8;
+        border-style: solid;
+        border-width: 1px 1px 1px;
+}
+th {
+	font-weight:bold;
+}
+thead th {
+	background:#e1f2fb;
+}
+th, td, caption {
+	padding:4px 10px 4px 5px;
+        border-color: #cbd4d8;
+        border-style: solid;
+        border-width: 1px 1px 0 1px;
+}
+tbody tr:nth-child(even) td, tbody tr.even td {
+	background:#f5f7fa;
+}
+tfoot {
+	font-style:italic;
+}
+caption {
+	background:#eee;
+}
+
+
+----------------------------------------------
+	
+        Menu stylesheet - Top, Side and Footer menus
+
+------------------------------------------------- */
+
+
+/* Main Menu Top Horizontal (1 level)
+------------------------------------------------- */
+/* hack for IE6 */
+* html #mainNav {
+/* hide ie/mac \*/
+	height: 1%;
+/* end hide */
+}
+#mainNav {
+	/*width: 100%;*/
+	float:right;
+	height: 49px;
+	font-size:120%;
+	margin: 34px 0 0;
+	padding-left:14px;
+}
+#mainNav ul {
+	list-style-type: none;
+	margin: 0;
+	padding-top: 10px;
+	padding-left: 10px;
+}
+/* menu list items */
+#mainNav li {
+	float: left;
+	list-style: none;
+	margin: 0;
+}
+#mainNav a, #mainNav h3 span, #mainNav .sectionheader span {
+	padding: 4px 4px 4px 4px;
+	margin: 0;
+	text-decoration: none;
+	color: #87888a; /* default link color */
+	display: block;
+	border:none;
+}
+/* hover state for links */
+#mainNav li a:hover {
+	color:#0888c3;
+}
+#mainNav a span {
+/* compensates for no left padding on the "a" */
+	padding: 6px 12px;
+}
+#mainNav li.parent a span {
+/* no left padding on the "a" we can set it here, it lets us use the span for an image */
+	padding-left: 20px;
+}
+#mainNav li.parent a:hover span {
+	padding-left: 20px;
+}
+#mainNav li.menuactive a span {
+	background: #73a24d;
+	color: #fff;
+}
+#mainNav li.currentpage h3	{
+	font-size:100%;
+}
+#mainNav li.currentpage h3 span {
+	padding: 6px 12px;
+	background: #73a24d;
+	color: #fff;
+}
+#mainNav .sectionheader span {
+/* compensates for no left padding on the "sectionheader" */
+	padding-left: 15px;
+}
+/* active parent, that is the first level parent of a child page that is the current page */
+#mainNav li.menuactive, #mainNav li.menuactive a:hover {
+	color: #000;
+}
+
+
+/* Submenu side vertical (up to 3 levels)
+------------------------------------------------- */
+#subNav {
+	margin: 10px 0 0;
+	padding: 0;
+}
+#subNav ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+}
+#subNav ul ul {
+	margin: 0;
+	padding: 0;
+}
+#subNav li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #e4e4e4;
+}
+#subNav li li,
+#subNav li li li {
+	border: none;
+}
+#subNav li.currentpage {
+	padding:0;
+}
+#subNav li.menuactive {
+	margin: 0;
+	padding: 0px;
+}
+#subNav li.menuactive a.menuactive {
+	color: #222;
+}
+#subNav li.menuactive ul {
+	margin: 0 0 10px 0;
+}
+#subNav li.menuactive ul ul {
+	margin: 4px 0;
+}
+
+
+/* fix IE6 bug */
+* html #subNav li {
+	height: 1%;
+}
+* html #subNav li a {
+	height: 1%;
+}
+* html #subNav li hr {
+	height: 1%;
+}
+/** end fix **/
+
+/* first level links */
+#subNav a {
+	display: block;
+	padding: 0.8em 0.3em 0.6em 0.2em;
+	color: #0888C3; /* this will be link color for all levels */
+	min-height: 1em; /* Fixes IE7 whitespace bug */ 
+	text-decoration: none;
+	font-size:1.2em;
+	border:none;
+}
+/* second level links */
+#subNav ul ul a {
+	font-size: 1em;
+	padding: 0.8em 0.3em 0.5em 1.6em;
+}
+/* third level links */
+#subNav ul ul ul a {
+	font-size: 0.875em;
+	padding: 0.5em 0.3em 0.3em 3.8em;
+}
+/* hover state for all links */
+#subNav a:hover {
+	background-color: transparent;
+	color: #39b9f4;
+}
+#subNav li a.parent {
+	padding-left: 0em;
+}
+#subNav ul ul li a.parent {
+	padding-left: 1.4em;
+}
+#subNav li a.parent span {
+	display: block;
+	margin: 0;
+	padding-left: 0.2em;
+	background: transparent url(/uploads/tpl-buddy-001/activeparent.png) no-repeat right center;
+}
+#subNav li a.parent:hover {
+	text-decoration: none;
+}
+#subNav li a.parent:hover span {
+	display: block;
+	margin: 0;
+	padding-left: 0.2em;
+	background: transparent url(/uploads/tpl-buddy-001/activeparent.png) no-repeat right center;
+}
+#subNav li a.menuactive.menuparent {	
+}
+#subNav ul ul li a.menuactive.menuparent {
+	padding-left: 1.6em;
+}
+#subNav li a.menuactive.menuparent span {
+	display: block;
+	margin: 0;
+	background: transparent url(/uploads/tpl-buddy-001/activeparent.png) no-repeat right center;
+	color:#0888c3;
+}
+#subNav li a.menuactive.menuparent:hover,
+#subNav li a.menuactive.menuparent:hover span {
+	text-decoration: none;
+	color: #39b9f4;
+}
+#subNav li a.menuactive.parent	{
+	border-bottom:1px dashed #ccc;
+}
+#subNav li li a.menuactive.parent	{
+	border-bottom:1px dashed #dedede;
+}
+
+
+/* current pages in some Menu Manager templates are unclickable - current page on first level */
+#subNav ul h3 {
+	display: block;
+	padding: 0.8em 0.3em 0.6em 0.2em;
+	color: #000;
+	font-size: 1.2em;
+	margin: 0;
+	line-height: inherit;
+}
+/* second level current pages */
+#subNav ul ul h3 {
+	font-size: 1em;
+    padding: 0.8em 0.3em 0.5em 1.6em;
+	color: #000;
+}
+/* third level current pages */
+#subNav ul ul ul h3 {
+	font-size: 0.875em;
+	padding: 0.5em 0.5em 0.3em 3.8em;
+}
+
+/* section header */
+#subNav li.sectionheader {
+	border-right: none;
+	padding: 0.8em 0.5em 0.5em 0.2em;
+	line-height: 1.2em;
+	margin: 0;
+        color: #787878;
+        cursor:text;
+	font-size: 1.2em;
+}
+#subNav li li.sectionheader {
+	padding: 0.8em 0.5em 0.5em 1.6em;
+	line-height: 1.1em;
+	font-size: 1em;
+}
+#subNav li li li.sectionheader {
+	padding: 0.8em 0.5em 0.5em 3.8em;
+	line-height: 1em;
+        color: #787878;
+	font-size: 0.875em;
+}
+/* separator */
+#subNav .separator {
+	height: 1px !important;
+	margin-top: -1px;
+	margin-bottom: 0;
+	padding: 1px 0 0px 0;
+	background-color: #666;
+	overflow: hidden !important;
+	line-height: 1px !important;
+	font-size: 1px;
+/* for ie */
+}
+#subNav li.separator hr {
+	display: none;
+/* this is for accessibility */
+}
+
+/* Footer menu horizontal (1 level)
+------------------------------------------------- */
+/* hack for IE6 */
+* html #footerNav {
+/* hide ie/mac \*/
+	height: 1%;
+/* end hide */
+}
+#footerNav {
+	float:left;
+	font-size:120%;
+	margin: 2px 0 8px 0;
+}
+#footerNav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+/* menu list items */
+#footerNav li {
+	float: left;
+	list-style: none;
+	margin: 0;
+}
+#footerNav a, #footerNav h3 span, #footerNav .sectionheader span {
+	padding: 4px 7px 4px 7px;
+	margin: 0;
+	text-decoration: none;
+	color: #0888c3; /* default link color */
+	display: block;
+	border:none;
+}
+/* hover state for links */
+#footerNav li a:hover {
+	color:#39b9f4;	
+}
+#footerNav a span {
+	padding: 6px 4px 0 4px;
+}
+#footerNav li.parent a span {
+	padding-left: 20px;
+}
+#footerNav li.parent a:hover span {
+	padding-left: 20px;
+}
+#footerNav li.menuactive a span {
+	color: #000;
+}
+#footerNav li.currentpage h3	{
+	font-size:100%;
+}
+#footerNav li.currentpage h3 span { 
+	padding: 7px 7px 4px 14px;
+	color: #000;
+}
+#footerNav .sectionheader span {
+	padding-left: 15px;
+}
+/* active parent, that is the first level parent of a child page that is the current page */
+#footerNav li.menuactive, #footerNav li.menuactive a:hover {
+	color: #000;
+}
+/* Stylesheet: tpl-buddy-001 // Main Modified On 2013-07-27 15:55:43 */

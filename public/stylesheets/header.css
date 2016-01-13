@@ -1,0 +1,30 @@
+#headerPosition{
+  position:fixed;
+  z-index:1;
+  width:100%;
+}
+
+.headlogo{
+  margin: 10px 0 10px 0;
+}
+
+.navbar-form{
+    width:50%;
+}
+.form-group{
+    width:30%;
+}
+
+.navbar{
+    margin-bottom:0px;
+}
+.navbar-form .form-control{
+    width:100%;
+}
+
+/* Footer */
+
+footer {
+    padding: 50px;
+    background-color: rgb(25, 166, 22);
+}

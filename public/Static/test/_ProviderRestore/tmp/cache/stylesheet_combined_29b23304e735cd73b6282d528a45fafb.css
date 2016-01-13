@@ -1,0 +1,44 @@
+@charset "utf-8";
+/* ----------------------------------------------
+	Print CSS Document - CMS Template Buddy
+	Template No.: 001
+	Version: 1.01
+	
+	www.cmstemplatebuddy.com
+
+	Please read README_FIRST.txt
+------------------------------------------------- */
+ 
+body {
+	color: #000 !important;
+	
+	font-family: Arial;
+	border: 0 !important;
+}
+* {
+	border: 0 !important;
+}
+.accessibility, 
+.noprint {
+	display: none !important;
+}
+div#content, 
+div#main {
+	display: block !important;
+	width: 100% !important;
+	border: 0 !important;
+	padding: 1em !important;
+}
+div#mainNav, 
+div#sliderWrapper, 
+div#sidebar, 
+div#footerNav, 
+div.footer-icons, 
+div.breadcrumbs, 
+a.to-top {
+	display: none !important;
+}
+img {
+	float: none;
+}
+/* Stylesheet: tpl-buddy-001 // Print Modified On 2013-07-26 15:39:18 */

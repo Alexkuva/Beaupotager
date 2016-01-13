@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <!--[if IE]><link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" /><![endif]-->
+
+    <title>Beaupotager</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for form template -->
+    <link href="signin.css" rel="stylesheet">
+    <!-- Custom styles for template style -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        
+        <div class="masthead clearfix">
+          <div class="inner">
+            <h3 class="masthead-brand"><a href="index.html"><img src="images/logobeaupotager.png"/></a></h3>
+            <nav>
+              <ul class="nav masthead-nav">
+                <!--<li><a href="#"class="active">Inscription</a></li>-->
+                <li><a href="#">Inscription</a></li>
+                <li><a href="#">Connexion</a></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+
+        <div class="cover-container">
+          <div class="inner cover">
+            <div class="lead">
+            <form class="form-signin" action="contact.php" method="post" enctype="multipart/form-data">
+              <h2 class="form-signin-heading">Formulaire de Contact</h2>
+              <label for="inputName" class="sr-only">Nom</label>
+              <input type="text" id="inputName" class="form-control" placeholder="Nom" name="nom" required autofocus>
+
+              <label for="inputEmail" class="sr-only">Adresse Email</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="Adresse Email" name="email" required autofocus>
+
+              <label for="inputPhone" class="sr-only">Téléphone</label>
+              <input type="tel" id="inputPhone" class="form-control" placeholder="Téléphone" name="phone" required autofocus>
+			  <label for="box" class="sr-only">Plop</label>
+			  <span  class="checkbox"><input type="checkbox" style="vertical-align:top;" id="box" class="" name="vehicle" value="Car" checked>Recevoir la Newsletter</span>
+              <label for="type" class="sr-only">Vous êtes:</label>
+              <select name="type" id="type" class="form-control">
+                  <option value="" disabled selected hidden>Vous êtes:</option>
+                  <option value="association">Une association</option>
+                  <option value="entreprise">Une entreprise</option>
+                  <option value="particulier">Une particulier</option>
+                  <option value="etudiant">Un étudiant</option>
+                  <option value="autre">Autre</option>
+             </select>
+              <button class="btn btn-lg btn-primary btn-block" style="background-color:#72a14b;" type="submit">Envoyer</button>
+            </form>
+            </div class="lead">
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+              <p>Suivez-nous sur <a href="https://www.facebook.com/beaupotager/?fref=ts" target='_blank'>Facebook</a> et <a href="https://twitter.com/Beaupotager" target='_blank'>Twitter</a>.</p>
+              <p>N'hésitez pas à nous contacter sur: <span style="color:#fff">beaupotager@gmail.com</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>

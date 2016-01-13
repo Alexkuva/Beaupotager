@@ -1,0 +1,31 @@
+.container{
+    background-color: #B0C0C0;
+    position:fixed;
+    padding:0;
+    margin:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+}
+.annonce{
+    border-width:2px;
+    margin-left: 20%;
+    margin-bottom: 10px;
+}
+.img_annonce{
+    width: 70%;
+    border: 2px solid black;
+}
+.special{
+    margin-left: 21%;
+    margin-bottom:10px;
+}
+.informations{
+    margin-left: 15%;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+     width: 70%;
+     margin: auto;
+ }
