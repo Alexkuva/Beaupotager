@@ -9,7 +9,7 @@ var config = require('../config/config.js');
 
 var headlineArray = ['Où trouver un potager près de chez vous ?','Où trouver un maraîcher bio près de chez vous ?','Où trouver des fruits et légumes bios près de chez vous ?' ];
 
-router.get('/', function (req, res)  { 
+router.get('/', function (req, res)  {
   var randomNumber = Math.floor(Math.random() * 3);
   res.render('index', {
     title: config.appName + " | Accueil",
@@ -50,7 +50,9 @@ router.post('/signup', function(req, res) {
     }), req.body.password, function(err, account) {
         if (err) {
           console.log(err);
-          return res.render("signup", {info: "Sorry. That username already exists. Try again."});
+          return res.render("signup", {
+              title: config.appName + " | Inscription",
+            info: "Sorry. That username already exists. Try again."});
         }
 
         passport.authenticate('local')(req, res, function () {
@@ -61,7 +63,7 @@ router.post('/signup', function(req, res) {
 
 router.get('/login', function(req, res) {
     res.render('login', {
-      title: config.appName + " | Inscription",
+      title: config.appName + " | Connexion",
       user : req.user
     });
 });
@@ -76,7 +78,7 @@ router.post('/login', function handleLocalAuthentication(req, res, next) {
         if (err) return next(err);
         if (!user) {
             return res.render("login",{
-              title: config.appName + " | Inscription",
+              title: config.appName + " | Connexion",
               info: info.message})
         }
 
