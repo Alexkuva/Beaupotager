@@ -20,11 +20,20 @@ body()
                   img(src='../images/logobeaupotager.png')
               nav
                 ul.nav.masthead-nav
-                  // <li><a href="#"class="active">Inscription</a></li>
-                  li
-                    a(href='/signup') Inscription
-                  li
-                    a(href='/login') Connexion
+                  if (!user)
+                    li
+                      a(href='/signup') Inscription
+                    li
+                      a(href='/login') Connexion
+                    li
+                      a(href='/login') Proposer votre potager
+                  if (user)
+                    li
+                      a(href='#') Profil
+                    li
+                      a(href='#') Proposer votre potager
+                    li
+                      a(href='/logout') Déconnexion
     .text-vertical-center
       h1= title
       
