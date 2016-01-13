@@ -39,17 +39,6 @@ router.get('/:id', function(req, res, next) {
 //});
 
 
-router.get('/profile',function(req, res, next) {
-  if (req.isAuthenticated()){
-    res.render('profile',{ user : req.user });
-  }
-  else{
-        res.status(401).send("Unauthorized");
-    }
-});
-
-
-
 router.post('/create', function(req, res, next) {
   res.render('search');
 });
